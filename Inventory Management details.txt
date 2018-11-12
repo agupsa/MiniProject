@@ -1,0 +1,22 @@
+Entities:
+	customer(cust): id, name, age, add, mob
+	employee(emp_): id, name, age, add, mob, doj, sal, role, username, password
+	supplier(sup_): id, name, age, add, mob, item_category;
+	Item(item_): id, name, quantity, quantity_unti, dom, doe, cp, sp, disc, tax, stock, category;
+	Bill(b_): id, name, date, payment_details, typ(p/s),total
+		NEWtable for each bill: BillId: +gid+quantity+disc+price+tprice
+
+Process:
+purchase bill
+sales bill
+cust payment
+supplier payment
+loan ledger
+day sales
+
+
+relationship entities
+
+supplierdetails: suplier id+goodsid
+customer details: c_id + bill_id + payment recieved
+
