@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="InventoryManagmentSystem">
+    <wb-module deploy-name="RetailManagmentSystem">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="InventoryManagmentSystem"/>
-        <property name="java-output-path" value="/InventoryManagmentSystem/build/classes"/>
+        <property name="java-output-path" value="/RetailManagmentSystem/build/classes"/>
+        <property name="context-root" value="RetailManagmentSystem"/>
     </wb-module>
 </project-modules>
