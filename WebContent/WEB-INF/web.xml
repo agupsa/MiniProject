@@ -19,4 +19,34 @@
     <servlet-name>AdminLoginServlet</servlet-name>
     <url-pattern>/AdminLoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeRegistrationServlet</display-name>
+    <servlet-name>EmployeeRegistrationServlet</servlet-name>
+    <servlet-class>com.controller.EmployeeRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeRegistrationServlet</servlet-name>
+    <url-pattern>/EmployeeRegistrationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeDeleteServlet</display-name>
+    <servlet-name>EmployeeDeleteServlet</servlet-name>
+    <servlet-class>com.controller.EmployeeDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeDeleteServlet</servlet-name>
+    <url-pattern>/EmployeeDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeDispServlet</display-name>
+    <servlet-name>EmployeeDispServlet</servlet-name>
+    <servlet-class>com.controller.EmployeeDispServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeDispServlet</servlet-name>
+    <url-pattern>/EmployeeDispServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

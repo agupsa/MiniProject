@@ -11,7 +11,7 @@
 		<table align="center" bgcolor="cyan">
 			<tr>
 				<th>Id:</th>
-				<td><input type="text" name="id"></td>
+				<td><input type="number" name="id"></td>
 			</tr>
 			<tr>
 				<th>Name:</th>
@@ -19,7 +19,7 @@
 			</tr>
 			<tr>
 				<th>Age:</th>
-				<td><input type="text" name="age"></td>
+				<td><input type="number" name="age"></td>
 			</tr>
 			<tr>
 				<th>Address:</th>
@@ -27,7 +27,7 @@
 			</tr>
 			<tr>
 				<th>mob:</th>
-				<td><input type="text" name="mob" maxlength="10" ></td>
+				<td><input type="number" name="mob" maxlength="10" ></td>
 			</tr>
 			<tr>
 				<th>Joining Date:</th>
@@ -35,7 +35,15 @@
 			</tr>
 			<tr>
 				<th>Salary:</th>
-				<td><input type="text" name="sal"></td>
+				<td><input type="number" name="sal"></td>
+			</tr>
+			<tr>
+				<th>Username:</th>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<td><input type="text" name="password"></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Submit"></td>

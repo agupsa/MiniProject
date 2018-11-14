@@ -75,6 +75,15 @@ li.dropdown {
       <a href="ItemRegistration.jsp">Enter New Item in DataBase</a>
     </div>
   </li>
+   <li class="dropdown">
+    <a class="dropbtn" TARGET=_top >View Details</a>
+    <div class="dropdown-content">
+      <a href="EmployeeDispServlet">View Employee Data</a>
+      <a href="CustomerDispServlet">View Customer Data</a>
+      <a href="SupplierDispServlet">View Supplier Data</a>
+      <a href="ItemDispServlet">View Item in DataBase</a>
+    </div>
+  </li>
   
   <li class="dropdown">
     <a class="dropbtn" TARGET=_top >Update Details</a>
