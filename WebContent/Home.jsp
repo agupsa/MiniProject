@@ -70,8 +70,6 @@ li.dropdown {
     <a class="dropbtn" TARGET=_top >Enter Details</a>
     <div class="dropdown-content">
       <a href="EmployeeRegistration.jsp">Enter New Employee Data</a>
-      <a href="CustomerRegistration.jsp">Enter New Customer Data</a>
-      <a href="SupplierRegistration.jsp">Enter New Supplier Data</a>
       <a href="ItemRegistration.jsp">Enter New Item in DataBase</a>
     </div>
   </li>
@@ -79,8 +77,6 @@ li.dropdown {
     <a class="dropbtn" TARGET=_top >View Details</a>
     <div class="dropdown-content">
       <a href="EmployeeDispServlet">View Employee Data</a>
-      <a href="CustomerDispServlet">View Customer Data</a>
-      <a href="SupplierDispServlet">View Supplier Data</a>
       <a href="ItemDispServlet">View Item in DataBase</a>
     </div>
   </li>
@@ -89,8 +85,6 @@ li.dropdown {
     <a class="dropbtn" TARGET=_top >Update Details</a>
     <div class="dropdown-content">
       <a href="EmployeeUpdate.jsp">Update Employee Data</a>
-      <a href="CustomerUpdate.jsp">Update Customer Data</a>
-      <a href="SupplierUpdate.jsp">Update Supplier Data</a>
       <a href="ItemUpdate.jsp">Update Item in DataBase</a>
     </div>
   </li>
@@ -99,23 +93,17 @@ li.dropdown {
     <a class="dropbtn" TARGET=_top >Delete Details</a>
     <div class="dropdown-content">
       <a href="EmployeeDelete.jsp">Delete Employee Data</a>
-      <a href="CustomerDelete.jsp">Delete Customer Data</a>
-      <a href="SupplierDelete.jsp">Delete Supplier Data</a>
       <a href="ItemUpdate.jsp">Delete Item in DataBase</a>
     </div>
   </li>
   
   <li class="dropdown">
-    <a class="dropbtn" TARGET=_top >Billings</a>
+    <a class="dropbtn" TARGET=_top >Sales</a>
     <div class="dropdown-content">
-      <a href="SalesBills.jsp">Sales</a>
-      <a href="PurchaseBills.jsp">Purchase</a>
+      <a href="Bills.jsp">Billings</a>
       <a href="ViewSalesBills.jsp">View Sales Bills</a>
-      <a href="ViewPurchaseBills.jsp">View Purchase Bills</a>
       <a href="UpdateSalesBills.jsp">Update Sales Bill</a>
-      <a href="UpdatePurchaseBills.jsp">Update Purchase Bill</a>
       <a href="DeleteSalesBills.jsp">Delete Sales Bill</a>
-      <a href="DeletePurchaseBills.jsp">Delete Purchase Bill</a>
     </div>
   </li>
   

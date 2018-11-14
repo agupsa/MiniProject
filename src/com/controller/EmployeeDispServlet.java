@@ -35,7 +35,7 @@ public class EmployeeDispServlet extends HttpServlet {
 		IMApp ims = new IMApp();
 		List<Employee> elst = ims.getAllRecords();
 		request.setAttribute("empList", elst);
-		RequestDispatcher view = request.getRequestDispatcher("EmpDisp");
+		RequestDispatcher view = request.getRequestDispatcher("EmpDisp.jsp");
 		view.forward(request, response);
 		
 	}

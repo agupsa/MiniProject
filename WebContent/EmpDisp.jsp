@@ -29,7 +29,6 @@
 		<th>Role</th>
 		<th>Username</th>
 		<th>Password</th>
-		<th>&nbsp;</th>
 	</tr>
 	<c:forEach items="${requestScope.empList}" var="e"> 		
 	<tr>
@@ -41,8 +40,8 @@
 		<td>${e.doj}</td>
 		<td>${e.sal}</td>
 		<td>${e.role}</td>
-		<td>${e.username}</td>
-		<td>${e.password}</td>
+		<td>${e.l.username}</td>
+		<td>${e.l.password}</td>
 	</tr>
 	</c:forEach>
 </table></c:if>

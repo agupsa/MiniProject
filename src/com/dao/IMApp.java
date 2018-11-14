@@ -160,7 +160,7 @@ public class IMApp {
 				e.setL(l);
 				lst.add(e);
 				System.out.println(rs.toString());
-				
+				con.close();
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
