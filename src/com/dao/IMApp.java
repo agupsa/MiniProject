@@ -6,8 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.model.*;
 
@@ -17,15 +20,18 @@ public class IMApp {
 	PreparedStatement ps;
 	ResultSet rs;
 	Statement s;
+	Logger log1;
 	public IMApp() {
 		super();
+		log1 = Logger.getLogger(IMApp.class.getName());
 		try {
 			Class.forName("oracle.jdbc.OracleDriver");
 			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","Newuser123");
 			System.out.println("Connected to db...");
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log1.log(Level.SEVERE, "Exception", e);
+			//e.printStackTrace();
 		}
 	}
 	@Override
@@ -33,38 +39,40 @@ public class IMApp {
 		// TODO Auto-generated method stub
 		super.finalize();
 		
-		try {
-			con.close();
-			System.out.println("Disconnected from db...");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();			
-		}
-	}
-	public boolean login(Login l) {
-		Login fl = new Login();
 		
+	}
+	public List<String> login(Login l) {
+		Login fl = new Login();
+		List<String> ls = new ArrayList<String>();
 		try {
 			System.out.println("in method");
-			ps = con.prepareStatement("Select password from EMPLOYEE where username=?");
+			ps = con.prepareStatement("Select password,role from EMPLOYEE where username=?");
 			ps.setString(1,l.getUsername());			
 			rs = ps.executeQuery();
 			rs.next();
 			fl.setPassword(rs.getString(1));
+			l.setRole(rs.getString(2));
+			
 			System.out.println("Got password from server");
+			con.close();
+			System.out.println("Disconnected from db...");
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			log1.log(Level.SEVERE, "Exception", e);
+			//e.printStackTrace();
 		}
-		if(fl.getPassword().equals(l.getPassword())) {
+		if(fl.getPassword().equals(l.getPassword())&&l.getRole()!=null) {
+			
+			ls.add(l.getRole());
 			System.out.println("password match");
-			return true;
+			return ls;
 			
 		}
 		
 		System.out.println("password mismatch");
-		return false;
+		return null;
 	}
 	
 	public int deleteRecord(List<Person> lst) {
@@ -81,10 +89,13 @@ public class IMApp {
 					ps.setLong(1,p.getId());
 					i = ps.executeUpdate();
 				}
+				con.close();
+				System.out.println("Disconnected from db...");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log1.log(Level.SEVERE, "Exception", e);
+			//e.printStackTrace();
 		}
 		
 		
@@ -107,16 +118,20 @@ public class IMApp {
 						ps.setLong(5, e.getPer().getMob());
 						ps.setDate(6, e.getDoj());
 						ps.setFloat(7, e.getSal());
-						ps.setString(8, e.getRole());
+						ps.setString(8, e.getL().getRole());
 						ps.setString(9, e.getL().getUsername());
 						ps.setString(10, e.getL().getPassword());
 						i=ps.executeUpdate();
+						con.close();
+						System.out.println("Disconnected from db...");
 					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					log1.log(Level.SEVERE, "Exception", e);
+					//e.printStackTrace();
 				}catch(Exception e) {
-					e.printStackTrace();
+					log1.log(Level.SEVERE, "Exception", e);
+					//e.printStackTrace();
 				}
 			
 						
@@ -154,17 +169,20 @@ public class IMApp {
 				e.setPer(per);
 				e.setDoj(rs.getDate(6));
 				e.setSal(rs.getFloat(7));
-				e.setRole(rs.getString(8));
+				l.setRole(rs.getString(8));
 				l.setUsername(rs.getString(9));
 				l.setPassword(rs.getString(10));
 				e.setL(l);
 				lst.add(e);
 				System.out.println(rs.toString());
-				con.close();
+				
 			}
+			con.close();
+			System.out.println("Disconnected from db...");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log1.log(Level.SEVERE, "Exception", e);
+			//e.printStackTrace();
 		}
 
 		return lst;

@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import com.dao.IMApp;
 import com.model.Login;
@@ -36,10 +36,13 @@ public class AdminLoginServlet extends HttpServlet {
 		l.setUsername(s1);
 		l.setPassword(s2);
 		IMApp ims=new IMApp();
-		boolean b=ims.login(l);
-		if(b)
+		l.setRole(ims.login(l).get(0));
+		if(l.getRole() != null)
 		{
 			System.out.println("Login Sucessfull");
+			HttpSession session = request.getSession(true);
+			session.setAttribute("username", l.getUsername());
+			session.setAttribute("role", l.getRole());
 			response.sendRedirect("Home.jsp");
 		}
 		else

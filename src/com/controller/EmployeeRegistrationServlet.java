@@ -72,11 +72,12 @@ public class EmployeeRegistrationServlet extends HttpServlet {
 		p.setMob(mob);
 		l.setUsername(username);
 		l.setPassword(password);
+		l.setRole("user");
 		e.setPer(p);
 		e.setL(l);
 		e.setDoj(doj);
 		e.setSal(sal);
-		e.setRole("user");
+		
 		List<Object> lst = new LinkedList<Object>();
 		lst.add(e);
 		System.out.println("model object created");

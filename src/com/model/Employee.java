@@ -6,7 +6,6 @@ public class Employee{
 	private Person per;
 	private Date doj;
 	private float sal;
-	private String role;
 	private Login l;
 	public Person getPer() {
 		return per;
@@ -25,11 +24,6 @@ public class Employee{
 	}
 	public void setSal(float sal) {
 		this.sal = sal;
-	}public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
 	}
 	public Login getL() {
 		return l;

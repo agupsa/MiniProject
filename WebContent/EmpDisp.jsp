@@ -39,7 +39,7 @@
 		<td>${e.per.mob}</td>
 		<td>${e.doj}</td>
 		<td>${e.sal}</td>
-		<td>${e.role}</td>
+		<td>${e.l.role}</td>
 		<td>${e.l.username}</td>
 		<td>${e.l.password}</td>
 	</tr>
